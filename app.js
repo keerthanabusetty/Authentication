@@ -24,6 +24,9 @@ const initializeDbAndServer = async () => {
 };
 
 initializeDbAndServer();
+const validatePassword = (password) => {
+  return password.length > 4;
+};
 //checks whether user is a new user or existing user
 app.post("/register", async (request, response) => {
   const { username, name, password, gender, location } = request.body;
